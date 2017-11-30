@@ -87,9 +87,8 @@ smtp_pass   = config.smtp_pass
 
 toEmails=config.emails
 
-for toEmail in toEmails:
-	msgRoot['To'] = toEmail
 
-for toEmail in toEmails:
-	sendEmailTo(toEmail,0)
+msgRoot['To'] =", ".join(toEmails)
+
+sendEmailTo(toEmails,0)
 
